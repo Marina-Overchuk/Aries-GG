@@ -1,0 +1,52 @@
+@@include('./templates/head.html')
+
+<body>
+    @@include('./templates/header.html')
+    <div class="wrapper">
+        <section class="login"> 
+            <div class="login__body">
+                <div class="login__container _container">
+                    <form action="" class="form__login">
+                        <h3 class="text-center">signup</h3>
+                        <div>
+                            <label for="email">Email</label>
+                         </div>    
+                         <div>
+                             <input type="email" id="email" name="email*" >
+                        </div>
+                        <div>
+                            <label for="userPassword">PASSWORD</label>
+                        </div>
+                        <div>   
+                            <input id="userPassword" type="password" required>
+                        </div> 
+                        <div>
+                            <label for="confirmPassword">CONFIRM PASSWORD</label>
+                        </div>
+                        <div>   
+                            <input id="confirmPassword" type="password" required>
+                        </div> 
+                        <div class="checkbox">
+                            <label for="terms">
+                            <input type="checkbox" id="terms" name="terms" value="terms">
+                            <span>I </span> accept the <span>T</span>erms and <span>C</span>onditions
+                            </label>
+                        </div>
+
+                        <div class="login__button">
+                        <button class="color__button" type="submit">login</button>
+                        </div>
+                        <div class="middle__line">
+                        <p class="text-center">or</p>
+                        </div>
+                        <div class="continue__button"><a href="#"><span>f </span>continue with facebook</a></div>
+                        <div class="continue__button button__red google"><a href="#"><span>g</span>continue with google</a></div>
+                        <div class="text-center login__link"><a href="login.html">Already have an account?  Login</a></div>
+                    
+                    </form>
+                </div>
+            </div> 
+        </section>
+    </div>
+
+    @@include('./templates/footer.html')
