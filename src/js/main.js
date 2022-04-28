@@ -34,8 +34,59 @@ jQuery(document).ready(function(){
       },
   });
 
+  const blogSlider = new Swiper('.blog-slider', {
+    // Default parameters
+    slidesPerView: 4,
+    speed: 1200,
+    spaceBetween: 30,
+    loop: true,
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 20
+      },
+      576: {
+        slidesPerView: 2,
+        spaceBetween: 30
+      },  
+      // when window width is >= 991px
+      991: {
+        slidesPerView: 4,
+        spaceBetween: 30
+      }
+    },
+    
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.main-pagination',
+      type: 'bullets',
+      clickable: true,
+    },
+   
+  });
 
-
+  const allBlogSlider = new Swiper('.allBlog-slider', {
+    slidesPerView: 1,
+    speed: 800,
+    spaceBetween: 10,
+    loop: true,
+    // Responsive breakpoints
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.blog__pagination',
+        renderBullet: function (index, className) {
+          return '<span class="' + className + '"> ' + (index + 1) + '</span>';
+        },
+        clickable: true,
+      },
+  });
 
  
   $('.header__burger').on('click', function () {
@@ -59,9 +110,7 @@ jQuery(document).ready(function(){
     
     });
 
-    $('.color__button').on('click', function(){
-      $('.home-allgames__body').removeClass('visible_block');
-      })
+    
    
     new WOW().init();
 
@@ -89,23 +138,5 @@ jQuery(document).ready(function(){
 }) 
 
 
-document.querySelector('#one').oninput = () => {
-  console.log(document.querySelector('#one').value);
-    document.querySelector('.num').innerHTML = +document.querySelector('#one').value;
-    }
 
-document.querySelector('#two').oninput = () => {
-    console.log(document.querySelector('#two').value);
-      document.querySelector('.num2').innerHTML = +document.querySelector('#two').value;
-    }
-
-document.querySelector('#money').oninput = () => {
-    console.log(document.querySelector('#money').value);
-        document.querySelector('.hour').innerHTML = +document.querySelector('#money').value;
-    }
-
-   // document.querySelector('#money').oninput = () => {
-     // console.log(document.querySelector('#money').value);
-       //   document.querySelector('.sum').innerHTML = +document.querySelector('#money').value*24;
-      //}
                  
